@@ -2,6 +2,8 @@ import os
 import sys
 # author: Mauricio Ross
 # description: make a basic component for ReactJs
+# example: python create_react_component.py main
+# files: index.js main.jsx main.scss
 nameComponent = str(sys.argv[1])
 indexjs = "export { default } from './"+nameComponent+"'"
 componente = "import React from 'react';\
