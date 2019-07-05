@@ -2,9 +2,6 @@ import os
 import sys
 # author: Mauricio Ross
 # description: make a basic component for ReactJs
-# example: python create_react_component.py main
-# files: index.js main.jsx main.scss
-## IMPORTANT: :::::: this file must be in the root of the project ::::::
 nameComponent = str(sys.argv[1])
 indexjs = "export { default } from './"+nameComponent+"'"
 componente = "import React from 'react';\
@@ -34,13 +31,13 @@ def makeFolderComponent(_dirBase):
 
 def makeComponent():
     existe = os.path.isdir(dirBase+'/components/'+str(sys.argv[1]))
-    print(existe)
     if(existe is False):
         folder = dirBase+'/components/'+str(sys.argv[1])
         os.mkdir(folder)
         escribirArchivo(folder+'/'+nameComponent+'.jsx', componente)
         escribirArchivo(folder+'/index.js', indexjs)
         escribirArchivo(folder+'/'+nameComponent+'.scss', sass)
+        print("Componente "+nameComponent+" creado exitosamente.")
     else:
         print('La carpeta de componente '+nameComponent+' ya existe.')
 
